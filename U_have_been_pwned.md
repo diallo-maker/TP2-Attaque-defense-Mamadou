@@ -11,7 +11,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
    ...
 - En rechargeant la page, on constate que le numéro de téléphone a été modifié, les images supprimées et le courriel changé.
 
-
+## ctrl+X (sortir et enregistrer le html)
 ## Correctif 1
 
 Commandes à effectuer ou étapes à mettre en place. 
