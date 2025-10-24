@@ -1,4 +1,4 @@
-# Travail 2 par *Diallo Mamadou Bobo* *1050*
+# Travail 2 par *Diallo Mamadou Bobo* *groupe: 1050*
 
 ## Attaque (exploit).
 
