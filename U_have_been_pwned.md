@@ -5,7 +5,9 @@
 Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone sur la page demandée:
 
 - Test des ports ouverts de l'addresse IP (http://192.168.220.10/) avec Nmap (scan intensif).
-- Les port 22 (ssh) et 80 (http) sont ouverts donc on peut utiliser ssh pour se connecter à la machine de notre victime. ![nmap](nmap.png)
+- Les port 22 (ssh) et 80 (http) sont ouverts donc on peut utiliser ssh pour se connecter à la machine de notre victime. 
+##
+![nmap](nmap.png)
 
 - Test de la connection par ssh (le nom d'utilisateur c'est bob, on la trouver par déduction, son prenom c'est bob).
 - Le mot de passe peut être déduis par  les anciens mots de passe: "Jane2001!" et "Patricia2011!" et ses informations (3 filles : Jane (5 juin 2001), Patricia (9 novembre 2011) et Sophie (10 décembre 2014)).
