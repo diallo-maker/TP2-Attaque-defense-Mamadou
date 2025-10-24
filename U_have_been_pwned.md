@@ -43,8 +43,10 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 - En rechargeant la page, on constate que le numéro de téléphone a été modifié, les images supprimées et le courriel changé.
 ![contact](resultat_contact.png)
 
+##
 ![réalisation](resultat_realisation.png)
 
+##
 ![lien](lien_resultat.png)
 
 
