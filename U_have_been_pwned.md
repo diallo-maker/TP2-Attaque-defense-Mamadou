@@ -4,8 +4,8 @@
 
 Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone sur la page demandée:
 
-- test des ports ouverts de l'addresse IP avec Nmap (scan intensif)
-   Le port 22(ssh) est ouvert donc on peut s'y connecter  ![nmap](nmap.png)
+- test des ports ouverts de l'addresse IP avec Nmap (scan intensif).
+- Le port 22(ssh) est ouvert donc on peut s'y connecter  ![nmap](nmap.png)
 -  + capture d'écran
 - ...
 - ...
