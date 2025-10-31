@@ -83,6 +83,6 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 
 - Pour le dernier correctif, il faut changer les permissions des fichiers de configurations du site et aussi du dossier ou est situé les fichiers. Ce correctif intevient dans la 4 ème étape et empêche à n'importe qui de modifier le site web.
 - Première étape, créér un groupe de permissions pour bob et daboss avec la commande : sudo groupadd dev et sudo usermod -a -G dev bob /daboss. Après, changer le propriétaire du dossier par www-data(apache) et lui donner les bonnes permissions: sudo chown -R www-data:dev /var/www/html/*
-sudo chmod -R 460 /var/www/html/*. Pour finir, on fait ls -al pour vérifier que les permissions ont été bien appliquer.
+sudo chmod -R 460 /var/www/html/* (-R = récursif donc s'applique au futur dossier ou fichier créer). Pour finir, on fait ls -al pour vérifier que les permissions ont été bien appliquer.
 
 ![permission](permission.png)
