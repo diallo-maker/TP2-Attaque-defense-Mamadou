@@ -55,22 +55,31 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ##
 ![lien](lien_resultat.png)
 
-
+## expoit2fix
 ## Correctif 1
-## fermer les ports non utiliser (22.80)
+## avoir des mots de passes plus compliquer/changer.
 
-Commandes à effectuer ou étapes à mettre en place. 
+- Comme premier correctif, on peut déjà avoir un mot de passe plus complexe et pas aussi facile à deviner comme celui de notre victime. Celà  aura pour effet d'empêcher l'étape 3 de l'exploit la connection à la machine avec l'utilisateur et le mot de passe.
+- Il faut que le mot de passe soit difficile à connaitre pour les autres et facile pour soit. Le plus simple est d'utiliser une phrase de passe(un mot de passe fait avec une phrase qui est facile pour soit de se rappeler.)
+- Donc pour changer le mot de passe, on doit aller dans Settings(Paramètres), ensuite Users(Utilisateurs), on choisit l'utilisateur Bob Smith et on entre le mot de passe de l'administrateur et ensuite on appuie sur password(mot de passe) et pour finir, on le change en respectant les règles de complexités.
+##
+![password](password.png)
 
-Capture d'écran de l'exploit qui ne fonctionne plus.
 
-## Correctif 2 (indépendant du correctif 1)
-## avoir des mots de passes plus compliquer.
 
-Commandes à effectuer ou étapes à mettre en place.
-
-Capture d'écran de l'exploit qui ne fonctionne plus. 
+## Correctif 2 
+## fermer les ports non utilisés [22(ssh),80 (http)]
+##
+- Comme second correctif on peut mettre en place des règles de parefeu qui empêche le traffic sur les ports qui sont ouverts mais que l'on ne se sert pas comme les ports 22 (SSH) et 80 (HTTP). Ce correctif aura comme effet de bloquer la deuxième étape de l'exploit donc le reste de l'exploit ne peut pas fonctionner.
+- Il faut d'abord faire la commande (sudo netstat -pantu) pour voir quel port est  ouvert et quel protocol écoute sur quel port.
+- Ensuite on active le parefeu avec la commande : sudo ufw enable
+- Après, on désactive le port avec la commande : sudo ufw deny 22
+- Pour finir, on s'assure que le port est bien fermer avec la commande : sudo ufw status verbose.
+##
+![parefeu](parefeu.png)
 
 ## Correctif 3
+## Changer les permissions des fichiers de configuration du site
 
 Commandes à effectuer ou étapes à mettre en place. 
 
