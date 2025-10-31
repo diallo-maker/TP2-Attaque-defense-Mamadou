@@ -70,7 +70,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ## Correctif 2 
 ## fermer les ports non utilisés [22(ssh),80 (http)]
 ##
-- Comme second correctif on peut mettre en place des règles de parefeu qui empêche le traffic sur les ports qui sont ouverts mais que l'on ne se sert pas comme les ports 22 (SSH) et 80 (HTTP). Ce correctif aura comme effet de bloquer la deuxième étape de l'exploit donc le reste de l'exploit ne peut pas fonctionner.
+- Comme second correctif, on peut mettre en place des règles de parefeu qui empêche le traffic sur les ports qui sont ouverts mais que l'on ne se sert pas comme les ports 22 (SSH) et 80 (HTTP). Ce correctif aura comme effet de bloquer la deuxième étape de l'exploit donc le reste de l'exploit ne peut pas fonctionner.
 - Il faut d'abord faire la commande (sudo netstat -pantu) pour voir quel port est  ouvert et quel protocol écoute sur quel port.
 - Ensuite on active le parefeu avec la commande : sudo ufw enable
 - Après, on désactive le port avec la commande : sudo ufw deny 22
