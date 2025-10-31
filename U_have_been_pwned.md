@@ -4,49 +4,49 @@
 
 Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone sur la page demandée:
 
-- Test des ports ouverts de l'addresse IP (http://192.168.220.10/) avec Nmap (scan intensif).
-- Les port 22 (ssh) et 80 (http) sont ouverts donc on peut utiliser ssh pour se connecter à la machine de notre victime. 
+- Test des ports ouverts de l'adresse IP (http://192.168.220.10/) avec Nmap (scan intensif).
+- Les ports 22 (SSH) et 80 (HTTP) sont ouverts donc on peut utiliser ssh pour se connecter à la machine de notre victime. 
 ##
 ![nmap](nmap.png)
 
-- Test de la connection par ssh (le nom d'utilisateur c'est bob, on la trouver par déduction, son prenom c'est bob).
-- Le mot de passe peut être déduis par  les anciens mots de passe: "Jane2001!" et "Patricia2011!" et ses informations (3 filles : Jane (5 juin 2001), Patricia (9 novembre 2011) et Sophie (10 décembre 2014)).
+- Test de la connexion par ssh (le nom d'utilisateur  bob, on la trouver par déduction, son prenom c'est bob).
+- Le mot de passe peut être déduit par  les anciens mots de passe: "Jane2001!" et "Patricia2011!" et ses informations (3 filles : Jane (5 juin 2001), Patricia (9 novembre 2011) et Sophie (10 décembre 2014)).
 - Sophie2014!
 ##
 ![SSH](SSH_connection.png)
 ##
 ![Test mot de passe](testmdp.png)
 
-- Une fois connecter, il faut chercher l'emplacement du fichier html du site web.
-- Il se trouve dans /var/www/html. La commande cd /var/www/html ( cd + l'emplacement pour t'y rendre) et après ( ls -al ) pour afficher les fichiers et dossiers.
+- Une fois connecté, il faut chercher l'emplacement du fichier HTML du site web.
+- Il se trouve dans /var/www/HTML. La commande cd /var/www/HTML ( CD + l'emplacement pour t'y rendre) et après ( ls -al ) pour afficher les fichiers et dossiers.
 ##
-![emplacement fichier html](emplacement.png)
+![emplacement fichier HTML](emplacement.png)
 
-## 1ère modification: changer le numéro de téléphone.
-- On utilise la commande: nano (le nom du fichier): [nano contact.html]  pour acceder et changer le fichier (Par téléphone : on y ajoute le numero demandé).
+## 1re modification: changer le numéro de téléphone.
+- On utilise la commande: nano (le nom du fichier): [nano contact.html]  pour accéder et changer le fichier ( Par téléphone : on y ajoute le numéro demandé).
 ##
 ![contact](modification.png)
 
-## 2 ème modification: le lien mailto.
+## 2e modification: le lien mailto.
 
-- On est dejà dans le fichier de contact, donc on doit juste changer le lien à l'emplacement "Par courriel" par "ouch.hacked@cem.ca"
-- Une fois le contact changer, on fait : ctrl+X pour sortir et enregistrer le fichier html.
+- On est déjà dans le fichier de contact, donc on doit juste changer le lien à l'emplacement "Par courriel" par "ouch.hacked@cem.ca"
+- Une fois le contact changer, on fait : ctrl+X pour sortir et enregistrer le fichier HTML.
 ##
 ![mailto](mailto.png)
 
 
-## 3 ème modification: supprimmer les images de réalisation.
+## 3e modification: supprimer les images de réalisation.
 
-- On fait la commande nano realisation.html pour acceder au fichier et supprimer les images demandées.
-- À l'eplacement < img src =""> on supprime le contenu entre les " " et les images seront supprimer.
-- Une fois changer, on fait : ctrl+X pour sortir et enregistrer le fichier html.
+- On fait la commande nano realisation.html pour accéder au fichier et supprimer les images demandées.
+- À l'emplacement < img src =""> on supprime le contenu entre les " " et les images seront supprimés.
+- Une fois changé, on fait : ctrl+X pour sortir et enregistrer le fichier HTML.
 ##
 ![réalisation](realisation.png) 
 
 
 ## Les résultats des modifications.
 
-- En rechargeant la page, on constate que le numéro de téléphone a été modifié, les images supprimées et le courriel changé.
+- En rechargeant la page, on constate que le numéro de téléphone a été modifié, les images supprimées et le courriel sont changés.
 ##
 ![contact](resultat_contact.png)
 
@@ -57,11 +57,11 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ![lien](lien_resultat.png)
 
 ## Correctif 1
-## Changer le mot de passe et avoir des mots de passes plus compliquer.
+## Changer le mot de passe et avoir des mots de passe plus compliqués.
 
-- Comme premier correctif, on peut déjà avoir un mot de passe plus complexe et pas aussi facile à deviner comme celui de notre victime. Celà  aura pour effet d'empêcher l'étape 3 de l'exploit la connection à la machine avec l'utilisateur et le mot de passe.
-- Il faut que le mot de passe soit difficile à connaitre pour les autres et facile pour soit. Le plus simple est d'utiliser une phrase de passe(un mot de passe fait avec une phrase qui est facile pour soit de se rappeler.)
-- Donc, pour changer le mot de passe, on doit aller dans Settings(Paramètres), ensuite Users(Utilisateurs), on choisit l'utilisateur Bob Smith et on entre le mot de passe de l'administrateur et ensuite on appuie sur password(mot de passe) et pour finir, on le change en respectant les règles de complexités.
+- Comme premier correctif, on peut déjà avoir un mot de passe plus complexe et pas aussi facile à deviner comme celui de notre victime. Cela  aura pour effet d'empêcher l'étape 3 de l'exploit, la connexion à la machine avec l'utilisateur et le mot de passe.
+- Il faut que le mot de passe soit difficile à connaitre pour les autres et facile pour soi. Le plus simple est d'utiliser une phrase de passe (un mot de passe fait avec une phrase qui est facile pour soi de se rappeler.)
+- Donc, pour changer le mot de passe, on doit aller dans Settings (Paramètres), ensuite Users (Utilisateurs), on choisit l'utilisateur Bob Smith et l’on entre le mot de passe de l'administrateur et ensuite on appuie sur password (mot de passe) et pour finir, on le change en respectant les règles de complexités.
 
 ![password](password.png)
 
@@ -70,19 +70,19 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ## Correctif 2 
 ## Fermer les ports non utilisés [22(ssh),80 (http)].
 
-- Comme second correctif, on peut mettre en place des règles de parefeu qui empêche le traffic sur les ports qui sont ouverts mais que l'on ne se sert pas comme les ports 22 (SSH) et 80 (HTTP). Ce correctif aura comme effet de bloquer la deuxième étape de l'exploit donc le reste de l'exploit ne peut pas fonctionner.
-- Il faut d'abord faire la commande (sudo netstat -pantu) pour voir quel port est  ouvert et quel protocol écoute sur quel port.
-- Ensuite, on active le parefeu avec la commande : sudo ufw enable
+- Comme second correctif, on peut mettre en place des règles de pare-feu qui empêche le trafic sur les ports qui sont ouverts, mais que l'on ne se sert pas comme les ports 22 (SSH) et 80 (HTTP). Ce correctif aura comme effet de bloquer la deuxième étape de l'exploit donc le reste de l'exploit ne peut pas fonctionner.
+- Il faut d'abord faire la commande (sudo netstat -pantu) pour voir quel port est  ouvert et quel protocole écoute sur quel port.
+- Ensuite, on active le pare-feu avec la commande : sudo ufw enable
 - Après, on désactive le port avec la commande : sudo ufw deny 22
-- Pour finir, on s'assure que le port est bien fermer avec la commande : sudo ufw status verbose.
-![parefeu](parefeu.png)
+- Pour finir, on s'assure que le port est bien fermé avec la commande : sudo ufw status verbose.
+![pare-feu](parefeu.png)
 
 ##
 ## Correctif 3
 ## Changer les permissions des fichiers de configuration du site.
 
-- Pour le dernier correctif, il faut changer les permissions des fichiers de configurations du site et aussi du dossier ou est situé les fichiers. Ce correctif intevient dans la 4 ème étape et empêche à n'importe qui de modifier le site web.
-- Première étape, créér un groupe de permissions pour bob et daboss avec la commande : sudo groupadd dev et sudo usermod -a -G dev bob /daboss. Après, changer le propriétaire du dossier par www-data(apache) et lui donner les bonnes permissions: sudo chown -R www-data:dev /var/www/html/*
-sudo chmod -R 460 /var/www/html/* (-R = récursif donc s'applique au futur dossier ou fichier créer). Pour finir, on fait ls -al pour vérifier que les permissions ont été bien appliquer.
+- Pour le dernier correctif, il faut changer les permissions des fichiers de configurations du site et aussi du dossier où sont situés les fichiers. Ce correctif intervient dans la 4e étape et empêche  n'importe qui de modifier le site web.
+- Première étape, créer un groupe de permissions pour bob et daboss avec la commande : sudo groupadd dev et sudo usermod -a -G dev bob /daboss. Après, changer le propriétaire du dossier par www-data (apache) et lui donner les bonnes permissions: sudo chown -R www-data:dev /var/www/html/*
+sudo chmod -R 460 /var/www/html/* (-R = récursif donc s'applique au futur dossier ou fichier créer). Pour finir, on fait ls -al pour vérifier que les permissions ont été bien appliquées.
 
 ![permission](permission.png)
