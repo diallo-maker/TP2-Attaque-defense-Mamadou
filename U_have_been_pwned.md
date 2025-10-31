@@ -57,7 +57,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ![lien](lien_resultat.png)
 
 ## Correctif 1
-## Avoir des mots de passes plus compliquer/changer.
+## Changer le mot de passe et avoir des mots de passes plus compliquer.
 
 - Comme premier correctif, on peut déjà avoir un mot de passe plus complexe et pas aussi facile à deviner comme celui de notre victime. Celà  aura pour effet d'empêcher l'étape 3 de l'exploit la connection à la machine avec l'utilisateur et le mot de passe.
 - Il faut que le mot de passe soit difficile à connaitre pour les autres et facile pour soit. Le plus simple est d'utiliser une phrase de passe(un mot de passe fait avec une phrase qui est facile pour soit de se rappeler.)
