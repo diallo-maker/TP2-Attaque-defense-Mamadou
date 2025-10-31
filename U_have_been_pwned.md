@@ -84,4 +84,5 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 
 - Pour le dernier correctif, il faut changer les permissions des fichiers de configurations du site et aussi du dossier ou est situé les fichiers. Ce correctif intevient dans la 4 ème étape et empêche à n'importe qui de modifier le site web.
 - Première étape, utilisé la commande cd /var/www/html pour aller dans l'emplacement des fichiers de configuration du site. Ensuite, on fait la commande sudo chmod 644 /var/www/html/* pour que les autres puisse lire seulement et sudo chmod 755 /var/www/html/ pour que www.data puisse accéder au dossier et afficher le site.
+##
 ![permissions](permissionsv2.png)
