@@ -11,6 +11,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 
 - Test de la connection par ssh (le nom d'utilisateur c'est bob, on la trouver par déduction, son prenom c'est bob).
 - Le mot de passe peut être déduis par  les anciens mots de passe: "Jane2001!" et "Patricia2011!" et ses informations (3 filles : Jane (5 juin 2001), Patricia (9 novembre 2011) et Sophie (10 décembre 2014)).
+- Sophie2014!
 ##
 ![SSH](SSH_connection.png)
 ##
@@ -55,7 +56,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ##
 ![lien](lien_resultat.png)
 
-## expoit2fix
+## exploit2fix
 ## Correctif 1
 ## avoir des mots de passes plus compliquer/changer.
 
@@ -81,6 +82,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 ## Correctif 3
 ## Changer les permissions des fichiers de configuration du site
 
-Commandes à effectuer ou étapes à mettre en place. 
+- Pour le dernier correctif, il faut changer les permissions des fichiers de configurations du site et aussi du dossier ou est situé les fichiers. Ce correctif intevient dans la 4 ème étape et empêche à n'importe qui de modifier le site web.
+- Première étape, utilisé la commande cd /var/www/html pour aller dans l'emplacement des fichiers de configuration du site. Ensuite, faire sudo chown bob:daboss /var/www/html/* pour changer le propiétaire du dossier bob et le groupe admin daboss. Ensuite, on fait la commande sudo chmod 644 /var/www/html/* pour seul Bob puisse lire et écrire dans les fichiers qui sont dans le dossier /html et les autres ne peuvent que lire les fichiers mais ne peuvent pas les modifier.
 
-Capture d'écran de l'exploit qui ne fonctionne plus.
+![permissions](permissions.png)
