@@ -61,9 +61,9 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 
 - Comme premier correctif, on peut déjà avoir un mot de passe plus complexe et pas aussi facile à deviner comme celui de notre victime. Cela  aura pour effet d'empêcher l'étape 3 de l'exploit, la connexion à la machine avec l'utilisateur et le mot de passe.
 - Il faut que le mot de passe soit difficile à connaitre pour les autres et facile pour soi. Le plus simple est d'utiliser une phrase de passe (un mot de passe fait avec une phrase qui est facile pour soi de se rappeler.)
-- Donc, pour changer le mot de passe, on doit aller dans Settings (Paramètres), ensuite Users (Utilisateurs), on choisit l'utilisateur Bob Smith et l’on entre le mot de passe de l'administrateur et ensuite on appuie sur password (mot de passe) et pour finir, on le change en respectant les règles de complexités.
-
-![password](password.png)
+- Donc, pour changer le mot de passe, on doit aller dans Settings (Paramètres), ensuite Users (Utilisateurs), on choisit l'utilisateur Bob Smith et l’on choisit "Allow user to change their password on next login".
+- Pour etre sur que Bob utilise un mot de passe robuste on peut installer un logiciel comme PAM (privilege Access Management) qui permet de s'assurer que les mots de passe créés respectent certains critères de sécurité.
+![password](password2.png)
 
 
 ##
@@ -74,6 +74,7 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 - Il faut d'abord faire la commande (sudo netstat -pantu) pour voir quel port est  ouvert et quel protocole écoute sur quel port.
 - Ensuite, on active le pare-feu avec la commande : sudo ufw enable
 - Après, on désactive le port avec la commande : sudo ufw deny 22
+- Ensuite, on fait la commande sudo ufw reload pour changer l'état du parefeu pour que l'état actuel puisse être enregistré.
 - Pour finir, on s'assure que le port est bien fermé avec la commande : sudo ufw status verbose.
 ![pare-feu](parefeu.png)
 
