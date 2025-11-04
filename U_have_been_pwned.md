@@ -65,9 +65,11 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 - Pour etre sur que Bob utilise un mot de passe robuste on peut installer un logiciel comme PAM (privilege Access Management) qui permet de s'assurer que les mots de passe créés respectent certains critères de sécurité.
 - La commande sudo apt install libpam-pwquality pour installer. Faire la commande sudo nano /etc/pam.d/common-password pour changer les critères de mot de passe. Ensuite la commande : (password    requisite     pam_pwquality.so retry=3 minlen=8 dcredit=-1 ocredit=-1
 password    [success=1 default=ignore] pam_unix.so use_authtok sha512 shadow) pour les critères. ctrl+X pour enregistrer et quitter.
+##
 ![password](password2.png)
-![pam](pam.png)
 
+![pam](pam.png)
+![pam](pass.png)
 
 ##
 ## Correctif 2 
@@ -77,8 +79,9 @@ password    [success=1 default=ignore] pam_unix.so use_authtok sha512 shadow) po
 - Il faut d'abord faire la commande (sudo netstat -pantu) pour voir quel port est  ouvert et quel protocole écoute sur quel port.
 - Ensuite, on active le pare-feu avec la commande : sudo ufw enable
 - Après, on désactive le port avec la commande : sudo ufw deny 22
-- Ensuite, on fait la commande sudo ufw reload pour changer l'état du parefeu pour que l'état actuel puisse être enregistré.
+- Ensuite, on fait la commande sudo ufw reload pour changer l'état du parefeu, pour que l'état actuel puisse être enregistré.
 - Pour finir, on s'assure que le port est bien fermé avec la commande : sudo ufw status verbose.
+
 ![pare-feu](parefeu.png)
 
 ##
