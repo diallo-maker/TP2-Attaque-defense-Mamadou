@@ -63,7 +63,10 @@ Voici les étapes détaillées pour pouvoir modifier le courriel / téléphone s
 - Il faut que le mot de passe soit difficile à connaitre pour les autres et facile pour soi. Le plus simple est d'utiliser une phrase de passe (un mot de passe fait avec une phrase qui est facile pour soi de se rappeler.)
 - Donc, pour changer le mot de passe, on doit aller dans Settings (Paramètres), ensuite Users (Utilisateurs), on choisit l'utilisateur Bob Smith et l’on choisit "Allow user to change their password on next login".
 - Pour etre sur que Bob utilise un mot de passe robuste on peut installer un logiciel comme PAM (privilege Access Management) qui permet de s'assurer que les mots de passe créés respectent certains critères de sécurité.
+- La commande sudo apt install libpam-pwquality pour installer. Faire la commande sudo nano /etc/pam.d/common-password pour changer les critères de mot de passe. Ensuite la commande : (password    requisite     pam_pwquality.so retry=3 minlen=8 dcredit=-1 ocredit=-1
+password    [success=1 default=ignore] pam_unix.so use_authtok sha512 shadow) pour les critères. ctrl+X pour enregistrer et quitter.
 ![password](password2.png)
+![pam](pam.png)
 
 
 ##
